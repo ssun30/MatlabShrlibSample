@@ -35,12 +35,12 @@ size_t copyString(char* dest, size_t length)
     std::cout << "N = " << N  << std::endl ;
     size_t ret = (length >= longStr.length() + 1) ? 0 : longStr.length() + 1;
     std::cout << "ret = " << ret  << std::endl ;
-    /* std::copy(src, src + N, dest); 
     std::cout << "src = " << src  << std::endl ;
+    std::copy(src, src + N, dest);
     std::cout << "dest = " << dest  << std::endl ;
     if (length != 0) {
         dest[length-1] = '\0';
-    } */
+    }
     std::cout << "dest = " << dest  << std::endl ;
     return ret;
 }
