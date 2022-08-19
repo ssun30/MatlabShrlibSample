@@ -1,5 +1,5 @@
 function loadShrlib
-    if ~libisloaded(ct)
+    if ~libisloaded('shrlibsample')
         loadlibrary('shrlibsample', 'shrlibsample.h', ...
                     'addheader', 'shrhelp');
     end
