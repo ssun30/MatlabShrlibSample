@@ -15,10 +15,12 @@
 */
 
 #include <string>
+#include <iostream>
 #define EXPORT_FCNS
 #include "shrhelp.h"
 
 #include "shrlibsample.h"
+
 
 using namespace std;
 
@@ -26,8 +28,13 @@ size_t copyString(char* dest, size_t length)
 {
     std::string longStr = "abccdefghijklmnopqrstuvwxyzabccdefghijklmnopqrstuvwxyzabccdefghijklmnopqrstuvwxyz";
     const char* src = longStr.c_str();
+    std::cout << "this is a message for staandard output" << std::endl ;
     size_t N = std::min(length, longStr.length() + 1);
+    std::cout << "N = " << N  << std::endl ;
+    std::cout << "longStr.length() = " << longStr.length()  << std::endl ;
+    std::cout << "length = " << length << std::endl ;
     size_t ret = (length >= longStr.length() + 1) ? 0 : longStr.length() + 1;
+    std::cout << "ret = " << ret  << std::endl ;
     /* std::copy(src, src + N, dest); 
     if (length != 0) {
         dest[length-1] = '\0';
