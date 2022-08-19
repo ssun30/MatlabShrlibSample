@@ -47,7 +47,8 @@ extern "C" {
 
     EXPORTED_FUNCTION void printExportedDoubleValue(void);  /* this function allows independent verification of exportedDoubleValue */
 
-    EXPORTED_FUNCTION int createLongStr(size_t buflen, char* buf);
+    EXPORTED_FUNCTION int createLongStr(size_t, char *);
+
 #ifdef __cplusplus
 }
 #endif
