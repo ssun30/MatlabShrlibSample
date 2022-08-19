@@ -28,10 +28,10 @@ size_t copyString(char* dest, size_t length)
     const char* src = longStr.c_str();
     size_t N = std::min(length, longStr.length() + 1);
     size_t ret = (length >= longStr.length() + 1) ? 0 : longStr.length() + 1;
-    std::copy(src, src + N, dest);
+    /* std::copy(src, src + N, dest); 
     if (length != 0) {
         dest[length-1] = '\0';
-    }
+    } */
     return ret;
 }
 
