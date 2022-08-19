@@ -1,4 +1,4 @@
-/* shrlibsample.c
+/* shrlibsample.cpp
  *
  * Sample C shared library for use with MATLAB Shared 
  * Library Calling (CALLLIB)
@@ -6,7 +6,7 @@
  *
  */
 
-/* shrlibsample.c
+/* shrlibsample.cpp
 *
 * Sample C shared library for use with MATLAB Shared 
  * Library Calling (CALLLIB)
@@ -14,10 +14,7 @@
 *
 */
 
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
-/*#include "windows.h"*/
+#include <string>
 #define EXPORT_FCNS
 #include "shrhelp.h"
 
@@ -39,7 +36,7 @@ size_t copyString(char* dest, size_t length)
     return ret;
 }
 
-extern "C"{ 
+extern "C" { 
     EXPORTED_FUNCTION void multDoubleArray(double *x,int size)
     {
         /* Multiple each element of the array by 3 */
@@ -153,7 +150,7 @@ extern "C"{
 
     EXPORTED_FUNCTION int createLongStr(size_t buflen, char* buf)
     {
-        return copyString(buf, buflen);    
+        return static_cast<int>(copyString(buf, buflen));    
     }
 }
 
