@@ -33,7 +33,6 @@ size_t copyString(char* dest, size_t length)
         dest[length-1] = '\0';
     }
     return ret;
-    return ret;
 }
 
 extern "C" { 
@@ -150,7 +149,7 @@ extern "C" {
 
     EXPORTED_FUNCTION int createLongStr(size_t buflen, char* buf)
     {
-        return static_cast<int>(copyString(buf, buflen));    
+        return static_cast<int>(copyString(buf, buflen));
     }
 }
 
