@@ -24,7 +24,7 @@ using namespace std;
 
 size_t copyString(char* dest, size_t length)
 {
-    std::string longStr = 'abccdefghijklmnopqrstuvwxyz';
+    std::string longStr = "abccdefghijklmnopqrstuvwxyzabccdefghijklmnopqrstuvwxyzabccdefghijklmnopqrstuvwxyz";
     const char* src = longStr.c_str();
     size_t N = std::min(length, longStr.length() + 1);
     size_t ret = (length >= longStr.length() + 1) ? 0 : longStr.length() + 1;
