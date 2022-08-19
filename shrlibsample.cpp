@@ -154,9 +154,9 @@ extern "C" {
         return strings;
     }
 
-    EXPORTED_FUNCTION int createLongStr(size_t buflen, char* buf)
+    EXPORTED_FUNCTION int createLongStr(int buflen, char* buf)
     {
-        return static_cast<int>(copyString(buf, buflen));
+        return static_cast<int>(copyString(buf, static_cast<size_t>(buflen)));
     }
 }
 
