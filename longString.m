@@ -1,6 +1,6 @@
 function str = longString
     buflen = calllib('shrlibsample', 'createLongStr', 0, '');
-    aa = repelem('a',buflen)
+    aa = char(ones(1,buflen+1))
     ptr = libpointer('cstring', aa);
     get(ptr)
     [iok, str] = calllib('shrlibsample', 'createLongStr', buflen, ptr);
