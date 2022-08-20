@@ -16,6 +16,7 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 #define EXPORT_FCNS
 #include "shrhelp.h"
 
@@ -44,6 +45,35 @@ size_t copyString(char* dest, size_t length)
     std::cout << "dest = " << dest  << std::endl ;
     return ret;
 }
+
+size_t copyArray( double* x, size_t lenx)
+{
+    size_t size = 80;
+    std::vector<double> array(size);
+    for(int i=0; i<size; ++i) {
+        array[i] = i;
+    }
+    std::cout << "this is a message for standard output" << std::endl ;
+    std::cout << "lenx = " << lenx << std::endl ;
+    std::cout << "array.size() = " << array.size()  << std::endl ;
+    if (lenx < array.size() ) {
+        return -1;
+    }
+    std::cout << "array = "  ;
+    for (std::vector<double>::const_iterator i = array.begin(); i != array.end(); ++i)
+        std::cout << *i << ' ';
+    std::cout << std::endl ;
+
+    std::copy(array.begin(), array.end(), x);
+
+    std::cout << "x = " ;
+    for (int i=0; i<array.size(); ++i)
+        std::cout << x[i] << ' ';
+    std::cout << std::endl ;
+
+    return 0;
+}
+
 
 extern "C" { 
     EXPORTED_FUNCTION void multDoubleArray(double *x,int size)
@@ -161,5 +191,9 @@ extern "C" {
     {
         return static_cast<int>(copyString(buf, static_cast<size_t>(buflen)));
     }
-}
 
+    EXPORTED_FUNCTION int createDoubleArray(int buflen, double* buf)
+    {
+        return static_cast<int>(copyArray(buf, static_cast<size_t>(buflen)));
+    }
+}

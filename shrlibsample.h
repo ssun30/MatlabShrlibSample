@@ -49,6 +49,8 @@ extern "C" {
 
     EXPORTED_FUNCTION int createLongStr(int, char *);
 
+    EXPORTED_FUNCTION int createDoubleArray(int, double *x);
+
 #ifdef __cplusplus
 }
 #endif
